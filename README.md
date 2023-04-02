@@ -32,3 +32,7 @@ playbook?
 * Play     : A Play is a list of tasks.
 * Task     : A Task is nothing but an action that we wish to perform
 
+How to run a playbbok?
+ansible-playbook -i inventoryFileName -e ansible_user=userName -e ansible_password=password nameOfThePlaybook.yml 
+
+
