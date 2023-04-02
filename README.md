@@ -27,3 +27,8 @@ Playbooks are written using a language called YAML.
 
 YAML is just  markup languaga ; Markup language is nothing a presentation language
 
+playbook?
+* Playbook : A Playbook is a list of plays ( and that's why it always starts with - )
+* Play     : A Play is a list of tasks.
+* Task     : A Task is nothing but an action that we wish to perform
+
