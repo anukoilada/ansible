@@ -36,3 +36,11 @@ How to run a playbbok?
 ansible-playbook -i inventoryFileName -e ansible_user=userName -e ansible_password=password nameOfThePlaybook.yml 
 
 
+ANSIBLE TASKS:
+Facts are the properties of the remote nodes that you ansible is going to collect ;  Based on these facts collected ansible decides whether to perform the action or not 
+
+How do I know, what all are the facts that are collected by ANSIBLE ?
+
+* Ansible uses a module called as setup using that we can check the collected facts 
+
+    $ ansible -i inventory all -m setup 
