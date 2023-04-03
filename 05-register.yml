@@ -16,5 +16,6 @@
       STATUS_CODE: "{{OUT.rc}}"
 
   - name: Printing uptime exit code 
-    ansible.builtin.debug:  
-      msg: "{{OUT.rc}}"  
+    ansible.builtin.debug:
+      msg: "{{OUT.rc}}"
+        
