@@ -4,7 +4,7 @@
   vars_prompt: 
     - name: PURL  
       prompt: Enter the purl 
-      private: false
+      private: True
   vars: 
     URL: play.google.com                    # Global Variable; All tasks can inherit this value  
   tasks:
