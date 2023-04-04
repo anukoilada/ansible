@@ -8,3 +8,11 @@
   - name: Starting Nginx 
     ansible.builtin.debug:  
       msg: Starting Nginx Service
+
+  - name: Check the user id 
+    ansible.builtin.shell: id 
+      register: OUT 
+
+  - name: Printing
+    ansible.builtin.debug:  
+      msg: "{{OUT}}"
