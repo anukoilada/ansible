@@ -20,3 +20,13 @@
       ansible.builtin.debug:
         msg: Installing Cart 
       tags: backend
+
+    - name: This is MongoDB task 
+      ansible.builtin.debug:
+        msg: Installing MongoDB
+      tags: db  
+
+    - name: This is Redis task 
+      ansible.builtin.debug:
+        msg: Installing Redis
+      tags: db 
