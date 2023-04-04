@@ -1,0 +1,10 @@
+- name: Checking a service is availabe or not 
+  hosts: all                   
+  tasks:
+  - name: Check Nginx is running or not 
+    ansible.builtin.shell: ps -ef | grep nginx | grep -v grep 
+    ignore_errors: yes
+
+  - name: Starting Nginx 
+    ansible.builtin.debug:  
+      msg: Starting Nginx Service
