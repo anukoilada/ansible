@@ -1,6 +1,5 @@
 - name: Demo on package installation 
-  hosts: all 
-  become: yes                              # Privilege Escalation
+  hosts: all                               # Privilege Escalation
   tasks: 
     - name: Installing nginx 
       ansible.builtin.package:
