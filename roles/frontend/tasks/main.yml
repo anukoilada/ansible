@@ -1,4 +1,3 @@
-      - name: Printing a text message
-         ansible.builtin.debug:
-             msg: I am a message printed from the frontend
-             
+    - name: Printing the text message 
+      ansible.builtin.debug:
+         msg: i am a message from the frontend
