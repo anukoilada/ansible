@@ -11,3 +11,13 @@
     name: "{{APPUSER}}"
     comment: Roboshop user account
 
+- name: Download and Extract catalogue
+  ansible.builtin.unarchive:
+    src: "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
+
+- name: Performing catalogue cleanup
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/catalogue/
+    state: absent 
