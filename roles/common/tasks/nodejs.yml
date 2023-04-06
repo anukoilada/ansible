@@ -1,0 +1,26 @@
+- name: Configuring the nodejs.repo
+  ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+
+- name: Installing Nodejs 
+  ansible.builtin.package:
+    name: nodejs
+    state: present
+
+# calling user task from common role
+- name: calling create user role from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create-user
+
+# calling download and Extract from common role
+- name: calling download and extract role from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download    
+
+# calling configure service from common role
+- name: calling configure service role from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: config-svs
+        
