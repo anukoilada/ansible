@@ -11,37 +11,38 @@
     name: "{{APPUSER}}"
     comment: Roboshop user account
 
-- name: Download and Extract catalogue
+- name: Download and Extract component
   ansible.builtin.unarchive:
-    src: "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+    src: "https://github.com/stans-robot-project/{{COMPONENT}}/archive/main.zip"
     dest: /tmp
     remote_src: yes
 
-- name: Performing catalogue cleanup
+- name: Performing component cleanup
   ansible.builtin.file:
-    path: /home/{{APPUSER}}/catalogue/
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
     state: absent
 
 - name: Copying files tp roboshop directory
   ansible.builtin.copy:
     src: /tmp/catalogue-main/
-    dest: /home/{{APPUSER}}/catalogue/
+    dest: /home/{{APPUSER}}/{{COMPONENT}}/
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
     remote_src: yes
 
 - name: generating the node modules
   community.general.npm:
-    path: /home/{{APPUSER}}/catalogue/ 
+    path: /home/{{APPUSER}}/{{COMPONENT}}/ 
 
 - name: Copying component systemd file
   ansible.builtin.copy:
     src: systemd.service
-    dest: /etc/systemd/system/catalogue.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
 - name: Restart service 
   ansible.builtin.service:
-    name: catalogue
+    name: {{COMPONENT}}
     state: restarted
     daemon-reload: true
-    enabled: yes    
+    enabled: yes 
+       
