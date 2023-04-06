@@ -41,8 +41,7 @@
 
 - name: Restart service 
   ansible.builtin.service:
-    name: {{COMPONENT}}
+    name: "{{COMPONENT}}"
     state: restarted
     daemon-reload: true
     enabled: yes 
-       
