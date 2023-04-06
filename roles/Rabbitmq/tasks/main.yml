@@ -9,7 +9,7 @@
     name: rabbitmq-server
     state: present 
 
-- name: start service RabbitMQ sewrver
+- name: start service RabbitMQ server
   ansible.builtin.service:
     name: rabbitmq-server
     state: started
