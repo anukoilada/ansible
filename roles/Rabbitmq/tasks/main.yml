@@ -1,7 +1,7 @@
-- name: Copying earlang repo
+- name: Configuring earlang repo
   ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
 
-- name: Copying rabbitmq repo
+- name: Cofiguring rabbitmq repo
   ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
 
 - name: Installing rabbitmq server 
@@ -24,6 +24,6 @@
     read_priv: .*
     write_priv: .*
     state: present
-     
+
 
 
