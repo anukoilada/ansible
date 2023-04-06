@@ -9,13 +9,13 @@
     name: rabbitmq-server
     state: present 
 
-- name: start service RabbitMQ server
+- name: start rabbitmq
   ansible.builtin.service:
     name: rabbitmq-server
     state: started
     enabled: yes     
 
-- name: Creating App User for RabbitMQ 
+- name: Creating App User for rabbitmq 
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
