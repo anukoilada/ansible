@@ -1,21 +1,21 @@
 - name: Copying earlanq repo
   ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
 
-- name: Copying rabbitmq repo
+- name: Copying RabbitMQ repo
   ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
 
-- name: Installing rabbitmq server 
+- name: Installing RabbitMQ server 
   ansible.builtin.package:
     name: rabbitmq-server
     state: present 
 
-- name: start service rabbitmq sewrver
+- name: start service RabbitMQ sewrver
   ansible.builtin.service:
     name: rabbitmq-server
     state: started
     enabled: yes     
 
-- name: Creating App User for rabbitmq 
+- name: Creating App User for RabbitMQ 
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
@@ -24,5 +24,5 @@
     read_priv: .*
     write_priv: .*
     state: present 
-    
+
 
