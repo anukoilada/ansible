@@ -16,7 +16,12 @@
 - name: calling download and extract role from common
   ansible.builtin.include_role:
     name: common
-    tasks_from: download    
+    tasks_from: download
+
+# Performing NPM Install
+- name: Doing Npm Install
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}      
 
 # calling configure service from common role
 - name: calling configure service role from common
