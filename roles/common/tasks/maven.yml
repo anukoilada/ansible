@@ -1,7 +1,7 @@
 - name: Installing maven 
   ansible.builtin.package:
     name: maven 
-    state: present  
+    state: present 
 
 # Calling User Task from common role
 - name: Calling Create User Role From Common
@@ -25,5 +25,4 @@
     name: common 
     tasks_from: config-svs
     
-
 
