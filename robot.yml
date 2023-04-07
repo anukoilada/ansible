@@ -3,6 +3,3 @@
   hosts: "{{COMPONENT}}"
   roles: 
        - "{{COMPONENT}}"
-
-
-
