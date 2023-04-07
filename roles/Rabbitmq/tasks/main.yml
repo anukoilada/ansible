@@ -1,4 +1,4 @@
-- name: Configuring earlang repo
+- name: Configuring Earlang repo
   ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
 
 - name: Configuring rabbitmq repo
@@ -15,7 +15,7 @@
     state: started
     enabled: yes     
 
-- name: Creating App User for rabbitmq 
+- name: Creating App user for rabbitmq 
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
@@ -25,6 +25,7 @@
     write_priv: .*
     state: present
     
+
 
 
 
