@@ -4,7 +4,7 @@
     dest: /tmp 
     remote_src: yes 
 
-- name: Performing catalogue cleanup 
+- name: Performing {{COMPONENT}} cleanup 
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}/
     state: absent
