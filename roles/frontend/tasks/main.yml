@@ -26,6 +26,7 @@
         dest: /etc/nginx/default.d/roboshop.conf
       Notify: Restart Nginx  
 
+#notify is the way to call a handler
     - name: start service nginx
       ansible.builtin.service:
         name: nginx
