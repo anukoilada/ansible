@@ -4,7 +4,7 @@
   hosts: localhost
   gather_facts: False
   vars:
-    instance_type: "t3.micro"
+    instance_type: "t2.micro"
     security_group_id: "sg-0d986e6f3c796001d"  # Update as per your security group id
     image: "ami-06ef3429338c1779f"             # Update this with the AMI ID in your account which has ansible installed.
     region: "us-east-1"
