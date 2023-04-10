@@ -12,7 +12,7 @@
                 sh "echo PERFORMING LINT CHECKSS"
             }
         }
-    stages {
+    
         stage('Performing Ansible Dry Run') {  // This stage I want to run it against a PR Only
             steps {
                 sh "env"
@@ -21,4 +21,3 @@
         }
     }
 }            
-}
