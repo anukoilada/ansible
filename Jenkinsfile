@@ -3,15 +3,7 @@ pipeline {
     environment { 
         SSH_CREDENTIALS = credentials('SSH_CRED') 
     }    
-    stages {
-        
-        stage('Performing Lint Check') {
-            steps {
-                sh "env"
-                sh "echo This step should run against non-main branches only"
-                sh "echo PERFORMING LINT CHECKSS"
-            }
-        }
+    stages 
 
         stage('Performing Ansible Dry Run') {     // This stage I want to run it against a PR Only
             steps {
@@ -22,4 +14,4 @@ pipeline {
 
     }
 
-}        
+        
