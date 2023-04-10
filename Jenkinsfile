@@ -5,7 +5,6 @@ pipeline {
     }    
     stages {
         stage('Performing Lint Check') {
-        when { branch pattern: "feature-.*", comparator: "REGEXP"}
             steps {
                 sh "env"
                 sh "echo This step should run against non-main branches only"
@@ -14,7 +13,6 @@ pipeline {
         }
 
         stage('Performing Ansible Dry Run') {     // This stage I want to run it against a PR Only
-        when { branch pattern: "PR-.*", comparator: "REGEXP"}
             steps {
                 sh "env"
                 sh "ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ansible_user=${SSH_CREDENTIALS_USR} -e ansible_password=${SSH_CREDENTIALS_PSW} -e ENV=qa"
