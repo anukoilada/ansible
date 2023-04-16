@@ -22,7 +22,7 @@
 - name: calling download and extract role from common
   ansible.builtin.include_role:
     name: common
-    tasks_from: download from-nexus
+    tasks_from: download-from-nexus
 
 # Performing NPM Install
 - name: Doing Npm Install
