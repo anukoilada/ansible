@@ -12,11 +12,17 @@
     name: common
     tasks_from: create-user
 
+# As per the standard application artifacts should be downloaded only from Test Artifacts Only ( Nexus )
+# - name: Calling Download and Extract Role From Common
+#   ansible.builtin.include_role:
+#     name: common 
+#     tasks_from: download
+
 # calling download and Extract from common role
 - name: calling download and extract role from common
   ansible.builtin.include_role:
     name: common
-    tasks_from: download
+    tasks_from: download from-nexus
 
 # Performing NPM Install
 - name: Doing Npm Install
