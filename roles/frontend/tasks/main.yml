@@ -3,6 +3,13 @@
         name: nginx 
         state: present
 
+    - name: Download and extract frontend 
+    ansible.builtin.unarchive:
+      src: https://github.com/stans-robot-project/frontend/archive/main.zip
+      dest: /tmp 
+    remote_src: yes
+ 
+    # Uncomment this when you don't have nexus or when you wish to download that from the GitHub 
     # - name: Performing frontend cleanup
     #   ansible.builtin.file:
     #     path: /usr/share/nginx/html
